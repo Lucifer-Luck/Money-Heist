@@ -1,0 +1,39 @@
+/* Start Format */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: sans-serif;
+    font-size: 10px;
+}
+/* End Format */
+
+
+
+/* Start Root */
+:root {
+    --bg-clr: #F0F2F5
+    --fg-clr: #FFFFFF;
+    --p-txt-clr: rgba(0, 0, 0, .8);
+    --s-txt-clr: rgba(0, 0, 0, .6);
+    --border-clr: rgba(0, 0, 0, .3);
+    --accent-clr: #F21818;
+    --theme-off: #2e2e2e;
+    --blend-mode: normal;
+}
+
+.dark_theme {
+    --bg-clr: #0f0f0f;
+    --fg-clr: #141414;
+    --card-clr: #202020;
+    --p-txt-clr: rgba(255, 255, 255, .8);
+    --s-txt-clr: rgba(255, 255, 255, .6);
+    --border-clr: rgba(255, 255, 255, .3);
+    --accent-clr: #FA383E;
+    --theme-on: #156ff5;
+    --blend-mode: lighten;
+}
+/* End Root */
