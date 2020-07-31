@@ -11,6 +11,7 @@
 :root {
     --bg-clr: #F0F2F5;
     --fg-clr: #FFFFFF;
+    --card-clr: #e4e6eb;
     --p-txt-clr: rgba(0, 0, 0, .8);
     --s-txt-clr: rgba(0, 0, 0, .6);
     --border-clr: rgba(0, 0, 0, .3);
@@ -20,9 +21,9 @@
 }
 
 .dark_theme {
-    --bg-clr: #0f0f0f;
-    --fg-clr: #141414;
-    --card-clr: #202020;
+    --bg-clr: #18191a;
+    --fg-clr: #242526;
+    --card-clr: #303031;
     --p-txt-clr: rgba(255, 255, 255, .8);
     --s-txt-clr: rgba(255, 255, 255, .6);
     --border-clr: rgba(255, 255, 255, .3);
