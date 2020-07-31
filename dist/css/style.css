@@ -1,21 +1,15 @@
-/* Start Format */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Start Font */
+@font-face {
+    src: url("fonts/Anton-Regular.ttf");
+    font-family: 'Anton';
 }
-
-html, body {
-    font-family: sans-serif;
-    font-size: 10px;
-}
-/* End Format */
+/* End Font */
 
 
 
 /* Start Root */
 :root {
-    --bg-clr: #F0F2F5
+    --bg-clr: #F0F2F5;
     --fg-clr: #FFFFFF;
     --p-txt-clr: rgba(0, 0, 0, .8);
     --s-txt-clr: rgba(0, 0, 0, .6);
@@ -37,3 +31,212 @@ html, body {
     --blend-mode: lighten;
 }
 /* End Root */
+
+
+
+/* Start Format */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-clr);
+}
+/* End Format */
+
+
+
+/* Start Global Style */
+
+/* End Global Style */
+
+
+
+
+/* Start Navigation Bar */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.navigation .logo {
+    font-family: 'Anton';
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 4rem;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+}
+
+.navigation .logo span {
+    font-size: 1.4rem;
+    background-color: var(--accent-clr);
+    padding: 0 .2rem;
+}
+
+.navigation .nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40rem;
+    height: 5rem;
+    /* background-color: red; */
+    list-style: none;
+}
+
+.navigation .nav__list .nav__items {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.navigation .nav__list .nav__items::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: .2rem;
+    background-color: var(--accent-clr);
+    transition: all 650ms ease-in-out;
+}
+
+.navigation .nav__list .nav__items:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navigation .nav__list .nav__items.active__link::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav__list .nav__items .nav__link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.nav__list .theme {
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__list .theme .bg__theme {
+    width: 4rem;
+    height: 1.8rem;
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--theme-off);
+    padding: .2rem;
+    cursor: pointer;
+}
+
+.nav__list .theme .bg__theme .circle {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+/* End Navigation Bar */
+
+
+
+
+
+/* Start Background Images */
+.bg__images {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.bg__images .img__container {
+    width: 100%;
+    height: 100%;
+    overflow: none;
+}
+
+.bg__images .img__container .img__track {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.img__container .img__track .img__items {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img__container .img__track .img__items::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.img__container .img__track .img__items img {
+    width: 100%;
+    height: 100%;
+}
+
+.img__container .img__track .img__items p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, .4);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+}
+/* End Background Images */
+
+
+
+
+
+/* Start About */
+.about {
+    width: 100%;
+    height: 100vh;
+}
+/* End About */
