@@ -75,7 +75,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 100;
+    z-index: 200;
 }
 
 .navigation .logo {
@@ -185,7 +185,7 @@ body {
 .bg__images .img__container {
     width: 100%;
     height: 100%;
-    overflow: none;
+    overflow-x: hidden;
 }
 
 .bg__images .img__container .img__track {
@@ -195,6 +195,7 @@ body {
 }
 
 .img__container .img__track .img__items {
+    flex: 0 0 100%;
     width: 100%;
     height: 100%;
     position: relative;
@@ -227,6 +228,31 @@ body {
     color: rgba(255, 255, 255, .4);
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 3px;
+}
+
+.bg__images .bg__controller {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    color: rgba(255, 255, 255, .2);
+    padding: 1rem;
+    z-index: 100;
+    cursor: pointer;
+    transition: all .5s ease-in-out
+}
+
+.bg__images .bg__controller:hover {
+    background-color: rgba(0, 0, 0, .6);
+    color: rgba(255, 255, 255, .6);
+}
+
+.bg__controller.prev {
+    left: 0;
+}
+
+.bg__controller.next {
+    right: 0;
 }
 /* End Background Images */
 
