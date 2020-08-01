@@ -70,3 +70,47 @@ bgTrack.addEventListener('transitionend', () => {
             updating();
         }
 })
+
+
+
+
+
+// Start Scrolling
+window.addEventListener('scroll', () => {
+    let navBar = document.querySelector('.navigation');
+    let navLogo = document.querySelector('.logo');
+    let navText = document.querySelectorAll('.nav__link');
+
+    let windowPosition = window.scrollY > 100;
+
+    navBar.classList.toggle("scroll__active", windowPosition);
+    navLogo.classList.toggle("scroll__active", windowPosition);
+    navText.forEach(navLink => navLink.classList.toggle("scroll__active", windowPosition));
+
+
+    // Parallax
+    let parallax = document.querySelector('#parallaxMe');
+    let scrollPosition = window.pageYOffset;
+
+    parallax.style.transform = 'translateY(' + scrollPosition * .4 + 'px)';
+
+
+    // Start Filter
+    let navItems = document.querySelectorAll('.nav__items');
+    const docScrollTop = document.documentElement.scrollTop;
+    
+    for (let i = 0; i < navItems.length; i++) {
+        navItems[i].classList.remove("active__link");
+
+        if (docScrollTop < 520) {
+            document.querySelector(".nav__items.home").classList.add("active__link");
+        }
+            else if (docScrollTop < 1090) {
+                document.querySelector(".nav__items.about").classList.add("active__link");
+            }
+                else if (docScrollTop > 1090) {
+                    document.querySelector(".nav__items.char").classList.add("active__link");
+                }
+    }
+});
+// End Scrolling
