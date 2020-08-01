@@ -66,6 +66,15 @@ body {
     width: 100%;
     height: 100vh;
 }
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+}
 /* End Global Style */
 
 
@@ -317,5 +326,94 @@ body {
 
 
 /* Start About */
+.about {
+    position: relative;
+}
 
+.about .title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    margin: auto;
+}
+
+.about .title h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--p-txt-clr);
+    padding: 0 .3rem .3rem;
+    position: relative;
+}
+
+.about .title h1::before,
+.about .title h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: .3rem;
+    background-color: var(--accent-clr);
+}
+
+.about .title h1::before {
+    width: 6rem;
+    bottom: 0;
+}
+
+.about .title h1::after {
+    width: 3rem;
+    bottom: -1rem;
+}
+
+.about .details {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 38rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .details .poster {
+    flex: 0 0 30%;
+    width: 30%;
+    height: 100%;
+}
+
+.about .details .poster img {
+    width: 100%;
+    height: 100%;
+}
+
+.about .details .text {
+    flex: 0 0 calc(70% - 5rem);
+    width: calc(70% - 5rem);
+}
+
+.about .details .text h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: var(--p-txt-clr);
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.about .details .text p {
+    font-size: 1.2rem;
+    text-indent: 1rem;
+    text-align: justify;
+    color: var(--s-txt-clr);
+    font-weight: 600;
+}
+
+.about .details .text p:not(:last-child) {
+    margin-bottom: .8rem;
+}
 /* End About */
