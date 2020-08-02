@@ -114,3 +114,83 @@ window.addEventListener('scroll', () => {
     }
 });
 // End Scrolling
+
+
+
+
+
+// Start Characters Slider
+const slideContainer = document.querySelector('.slide__container');
+const slideTrack = document.querySelector('.slide__track');
+const prevChar = document.querySelector('.char__ctrl#prev');
+const nextChar = document.querySelector('.char__ctrl#next');
+
+let slideWidth = slideContainer.offsetWidth;
+let slideIndex = 0;
+
+
+// Start Function
+function updateChar() {
+    slideTrack.style.transition = 'transform .5s ease-in-out';
+    slideTrack.style.transform = 'translatex(' + (-slideWidth * slideIndex) + 'px)';
+}
+
+function hideMe() {
+    if (slideIndex === 0) {
+        prevChar.classList.add("hide__ctrl");
+        nextChar.classList.remove("hide__ctrl");
+    }
+        else if (slideTrack.offsetWidth - (slideWidth * slideIndex) <= slideWidth) {
+            prevChar.classList.remove("hide__ctrl");
+            nextChar.classList.add("hide__ctrl");
+        }
+            else {
+                prevChar.classList.remove("hide__ctrl");
+                nextChar.classList.remove("hide__ctrl");
+            }
+}
+// End Function
+
+prevChar.addEventListener('click', () => {
+    slideIndex--;
+
+    updateChar();
+    hideMe();
+});
+
+nextChar.addEventListener('click', () => {
+    slideIndex++;
+
+    updateChar();
+    hideMe();
+});
+// End Characters Slider
+
+
+
+
+
+// Start Theme
+const btnTheme = document.querySelector('.bg__theme');
+const circle = btnTheme.querySelector('.circle');
+const body = document.querySelector('body');
+
+let currentTheme = localStorage.getItem('currentTheme');
+
+if (currentTheme) {
+    body.classList.add('dark_theme');
+    circle.classList.add('active__circle');
+}
+
+btnTheme.addEventListener('click', () => {
+    body.classList.toggle('dark_theme');
+    circle.classList.toggle('active__circle');
+
+    if (body.classList.contains('dark_theme') || circle.classList.contains('active__circle')) {
+        localStorage.setItem('currentTheme', 'themeActive');
+    }
+        else {
+            localStorage.removeItem('currentTheme');
+        }
+})
+// End Theme
