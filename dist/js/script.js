@@ -128,6 +128,9 @@ const nextChar = document.querySelector('.char__ctrl#next');
 let slideWidth = slideContainer.offsetWidth;
 let slideIndex = 0;
 
+// window.addEventListener('resize', () => {
+//     slideWidth = document.querySelector('.slide__container').offsetWidth;
+// });
 
 // Start Function
 function updateChar() {
@@ -194,3 +197,17 @@ btnTheme.addEventListener('click', () => {
         }
 })
 // End Theme
+
+
+
+
+
+// Start Burger
+const burger = document.querySelector('.burger');
+const navList = document.querySelector('.nav__list');
+
+burger.addEventListener('click', () => {
+    burger.classList.toggle("show");
+    navList.classList.toggle("active__nav");
+})
+// End Burger
